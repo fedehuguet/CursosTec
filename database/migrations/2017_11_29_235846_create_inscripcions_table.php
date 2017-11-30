@@ -15,6 +15,8 @@ class CreateInscripcionsTable extends Migration
     {
         Schema::create('inscripcions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idCurso')->unsigned()->references('id')->on('cursos');
+            $table->integer('idCliente')->unsigned()->references('id')->on('clientes');
             $table->timestamps();
         });
     }
