@@ -1,12 +1,6 @@
 @include('layouts.app')
-      <!-- /jumbotron -->
-    <div class="jumbotron jumbotron-fluid bg-info" style="padding-bottom: 200px !important;">
-      <div class="container text-sm-center p-t-3">
-        <h1 class="display-2">Cursos</h1>
-        <p class="lead">¡Inscríbete al curso que buscas!</p>   
-      </div>
-    </div>
-      <!-- cursos -->
+<div class="container" style="padding-top: 80px;">
+	<!-- cursos -->
       <h1 id="cursos" class="display-4 text-xs-center m-y-3 text-muted">Cursos Disponibles</h1>
       
       <div class="row">
@@ -40,4 +34,5 @@
           </div>
         </div>
       </div>
+</div>
 @include('layouts.footer')

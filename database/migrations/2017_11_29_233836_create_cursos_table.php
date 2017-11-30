@@ -17,8 +17,8 @@ class CreateCursosTable extends Migration
             $table->increments('id');
             $table->string('sNombre');
             $table->integer('iCupo');
-            $table->double('dPrecio')
-            $table->text('txtDescripcion');
+            $table->double('dPrecio');
+            $table->text('sDescripcion');
             $table->string('fFecha');
             $table->timestamps();
         });

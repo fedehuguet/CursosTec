@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
       <div class="col-md-10">
         <ul class="nav navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">Cursos Tec <i class="large material-icons">format_paint</i></a>
+            <a class="nav-link" href="/">Cursos Tec <i class="large material-icons">computer</i></a>
           </li>
         </ul>
       </div>
@@ -30,7 +30,7 @@
             <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#cursos">Cursos</a>
+            <a class="nav-link" href="/cursos">Cursos</a>
           </li>
         </ul>
       </div>

@@ -13,8 +13,8 @@ class CursosController extends Controller
      */
     public function index()
     {
-        //$cursos = \App\Curso::get();
-        return view('detallecurso');//->with('cursos', $cursos);
+        $cursos = \App\Curso::get();
+        return view('cursos')->with('cursos', $cursos);
     }
 
     /**
@@ -46,7 +46,7 @@ class CursosController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('detallecurso');//->with('cursos', $cursos);
     }
 
     /**
