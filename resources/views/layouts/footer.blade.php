@@ -1,6 +1,10 @@
- <div class="fixed-bottom navbar-light " style="background-color: #e3f2fd;">
-    <p class="text-center">&copy;Federico Huguet | José Andrés Salazar | Ruben de la Peña</p>
-  </div>
+ <!-- footer -->
+      <div class="row p-y-1" style="background-color: rgb(153, 0, 0);margin-top: 50px;">
+          <div class="col-xs-12 text-xs-center">
+            <small style="color:#f2f2f2;">&copy; Proyecto final AMSS</small>
+          </div>
+      </div> 
+      <!-- footer -->
  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
