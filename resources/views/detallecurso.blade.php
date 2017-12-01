@@ -25,7 +25,7 @@
 		    	@foreach($inscripciones as $inscripcion)
 			      <tr>
 			        <td>{{$inscripcion->cliente->sNombre}}</td>
-			        <td>ejemplo@hotmail.com</td>
+			        <td>{{$inscripcion->cliente->sEmail}}</td>
 			      </tr>
 		      	@endforeach
 		    </tbody>

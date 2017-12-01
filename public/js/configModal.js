@@ -118,7 +118,8 @@ $("[id=modalInscribir]").ready(function () {
             $("#btnInscribirCurso").unbind('click');
             $("[id=btnInscribirCurso]").click(function () {
                 var sNom = $(this).closest('.modal').find('[name=nombreCliente]').val();
-                if(sNom == "") {
+                var sEm = $(this).closest('.modal').find('[name=emailCliente]').val();
+                if(sNom == "" || sEm == "") {
                     alert('Error llene los campos');
                     return;
                 }
@@ -126,6 +127,7 @@ $("[id=modalInscribir]").ready(function () {
                 dataSend = {
                     sNombre: sNom,
                     idCurso: idCur,
+                    sEmail: sEm,
                     _token: $('meta[name="csrf-token"]').attr('content')
                 };
                 $.ajax({

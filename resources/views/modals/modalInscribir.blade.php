@@ -10,6 +10,11 @@
                             <input class="form-control" type="text" placeholder="Nombre" id="example-text-input" name="nombreCliente">
                         </div>
                     </div>
+                    <div class="row top5" style="margin-bottom: 20px;">
+                        <div class="col-md-12 text-left">
+                            <input class="form-control" type="text" placeholder="ejemplo@mail.com" id="example-text-input" name="emailCliente">
+                        </div>
+                    </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary" id="btnInscribirCurso">Inscribir</button>
                         <button style="background-color: rgb(153, 0, 0); border-color: rgb(153, 0, 0);" class="btn btn-primary" data-dismiss="modal">Cancelar</button>

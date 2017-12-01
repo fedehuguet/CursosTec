@@ -38,7 +38,8 @@ class InscripcionController extends Controller
         unset($data["_token"]);
         $cliente = new \App\Cliente;
         $cliente->fill([
-            'sNombre' => $data['sNombre']
+            'sNombre' => $data['sNombre'],
+            'sEmail' => $data['sEmail']
         ]);
         $cliente->save();
         $inscripcion = new \App\Inscripcion;
