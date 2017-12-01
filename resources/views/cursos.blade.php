@@ -3,7 +3,9 @@
 	<!-- cursos -->
       <div class="col-md-12">
         <h1 id="cursos" class="col-xs-11 display-4 text-xs-center m-y-3">Cursos Disponibles</h1>
+        @if(Auth::check())
         <button class="btn btn-primary col-md-1 m-y-3" id="btnAddCurso">+</button>
+        @endif
       </div>
       <div class="row">
         @foreach($cursos as $curso)

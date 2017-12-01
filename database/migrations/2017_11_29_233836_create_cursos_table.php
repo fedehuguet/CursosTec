@@ -20,6 +20,7 @@ class CreateCursosTable extends Migration
             $table->double('dPrecio');
             $table->text('sDescripcion');
             $table->string('fFecha');
+            $table->integer('idUser')->unsigned()->references('id')->on('users');
             $table->timestamps();
         });
     }

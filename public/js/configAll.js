@@ -23,4 +23,48 @@ $(document).ready(function () {
 		}
 		
 	});
+    $("[id=btnRegistrar]").click(function () {
+        var sNom = $('[name=nombreUsuario]').val();
+        var sEm = $('[name=emailUsuario]').val();
+        var sPass = $('[name=passUsuario]').val();
+        if(sNom == "" || sEm == "" || sPass == "") {
+            alert('Error llene los campos');
+            return;
+        }
+        var urlResource = location.origin + "/users_admin";
+        dataSend = {
+            sNombre: sNom,
+            email: sEm,
+            password: sPass,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        };
+        $.ajax({
+          type: 'POST',
+          url: urlResource,
+          data: dataSend
+        }).done(function(response){
+            location.href = location.origin;
+        });
+    });
+    $("[id=btnLogin]").click(function () {
+        var sEm = $('[name=emailUsuario]').val();
+        var sPass = $('[name=passUsuario]').val();
+        if(sEm == "" || sPass == "") {
+            alert('Error llene los campos');
+            return;
+        }
+        var urlResource = location.origin + "/login";
+        dataSend = {
+            email: sEm,
+            password: sPass,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        };
+        $.ajax({
+          type: 'POST',
+          url: urlResource,
+          data: dataSend
+        }).done(function(response){
+            location.href = location.origin;
+        });
+    });
 });

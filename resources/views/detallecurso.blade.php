@@ -9,8 +9,11 @@
 		<p class ="col-md-4">Precio: $ {{$curso->dPrecio}} MXN</p>
 	</div>
 	<div class="col-md-4">
-		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnInscribir" idCurso="{{$curso->id}}">Inscribir al curso</button>
+		@if(Auth::check())
 		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnEditCurso" data-info="{{$curso}}">Editar el curso</button>
+		@else
+		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnInscribir" idCurso="{{$curso->id}}">Inscribirme al curso</button>
+		@endif
 	</div>
 	<div class="col-md-8" style="margin-top: 50px;">
 		<h2 class="col-md-11"> Inscritos </h2>

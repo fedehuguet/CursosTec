@@ -17,14 +17,14 @@
 
 <!-- navbar -->
     <nav class="navbar navbar-dark navbar-fixed-top">
-      <div class="col-md-10">
+      <div class="col-md-8">
         <ul class="nav navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/">Cursos Tec <i class="large material-icons">computer</i></a>
           </li>
         </ul>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-4">
         <ul class="nav navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
@@ -32,6 +32,18 @@
           <li class="nav-item">
             <a class="nav-link" href="/cursos">Cursos</a>
           </li>
+          @if(Auth::check())
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('logout')}}">Log out</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('users_admin')}}">Administradores</a>
+          </li>
+          @else
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('login')}}">Log in</a>
+          </li>
+          @endif
         </ul>
       </div>
     </nav>

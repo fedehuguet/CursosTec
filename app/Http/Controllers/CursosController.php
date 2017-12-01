@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CursosController extends Controller
 {
@@ -34,19 +35,22 @@ class CursosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $data = $request->all();
-        unset($data["_token"]);
-        $curso = new \App\Curso;
-        $curso->fill([
-            'sNombre' => $data['sNombre'],
-            'iCupo' => $data['iCupo'],
-            'dPrecio' => $data['dPrecio'],
-            'sDescripcion' => $data['sDescripcion'],
-            'fFecha' => $data['fFecha']
-        ]);
-        $curso->save();
-        $cursos = \App\Curso::get();
+    {   if(Auth::check()){
+            $userId = Auth::user()->id;
+            $data = $request->all();
+            unset($data["_token"]);
+            $curso = new \App\Curso;
+            $curso->fill([
+                'sNombre' => $data['sNombre'],
+                'iCupo' => $data['iCupo'],
+                'dPrecio' => $data['dPrecio'],
+                'sDescripcion' => $data['sDescripcion'],
+                'fFecha' => $data['fFecha'],
+                'idUser' => $userId
+            ]);
+            $curso->save();
+            $cursos = \App\Curso::get();
+        }
         return view('cursos')->with('cursos', $cursos);
     }
 
