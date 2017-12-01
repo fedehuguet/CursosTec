@@ -10,3 +10,7 @@ nav{
 .button, .active{
   transition: .4s;
 }
+
+a { 
+	color: inherit; 
+} 

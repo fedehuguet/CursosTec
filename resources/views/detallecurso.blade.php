@@ -1,15 +1,47 @@
 @include('layouts.app')
+@if(isset($curso))
 <div class="container" style="padding-top: 80px;">
 	<div class="col-md-8">
-		<h1 class="col-md-11"> Titulo curso </h1>
-		<p class="col-md-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		<p class ="col-md-11">Cupo: 20</p>
-		<p class ="col-md-5">Fecha: 10/22/2017</p>
-		<p class ="col-md-5">Precio: $ 100.00 MXN</p>
+		<h1 class="col-md-11"> {{$curso->sNombre}} </h1>
+		<p class="col-md-11">{{$curso->sDescripcion}}</p>
+		<p class ="col-md-3">Cupo: {{$curso->iCupo}}</p>
+		<p class ="col-md-3">Fecha: {{$curso->fFecha}}</p>
+		<p class ="col-md-4">Precio: $ {{$curso->dPrecio}} MXN</p>
 	</div>
 	<div class="col-md-4">
-		<input class="form-control" type="text" placeholder="Nombre" id="example-text-input" name="nombreCliente">
-		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnShow">Inscribir al curso</button>
+		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnInscribir" idCurso="{{$curso->id}}">Inscribir al curso</button>
+		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnEditCurso" data-info="{{$curso}}">Editar el curso</button>
+	</div>
+	<div class="col-md-8" style="margin-top: 50px;">
+		<h2 class="col-md-11"> Inscritos </h2>
+		  <table class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th>Nombre</th>
+		        <th>Email</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		    	@foreach($inscripciones as $inscripcion)
+			      <tr>
+			        <td>{{$inscripcion->cliente->sNombre}}</td>
+			        <td>ejemplo@hotmail.com</td>
+			      </tr>
+		      	@endforeach
+		    </tbody>
+		  </table>
 	</div>
 </div>
+<div style="display:none;" id='modalInscribir'>
+    @include('modals.modalInscribir')
+</div>
+<div style="display:none;" id='modalEditCur'>
+    @include('modals.modalEditCurso')
+</div>
+@else
+<div class="container" style="padding-top: 80px;">
+	<h1 id="cursos" class="col-xs-11 display-4 text-xs-center m-y-3">Curso no encontrado</h1>
+</div>
+@endif
+
 @include('layouts.footer')

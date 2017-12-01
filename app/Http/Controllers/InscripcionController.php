@@ -34,7 +34,22 @@ class InscripcionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        unset($data["_token"]);
+        $cliente = new \App\Cliente;
+        $cliente->fill([
+            'sNombre' => $data['sNombre']
+        ]);
+        $cliente->save();
+        $inscripcion = new \App\Inscripcion;
+        $curso = \App\Curso::find($data['idCurso']);
+        $inscripcion->fill([
+            'idCurso' => $curso->id,
+            'idCliente' => $cliente->id,
+        ]);
+        $inscripcion->save();
+        $inscripciones = \App\Inscripcion::where('idCurso',$curso->id)->get();
+        return view('detallecurso')->with('curso', $curso)->with('inscripciones',$inscripciones);
     }
 
     /**

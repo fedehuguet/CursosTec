@@ -35,7 +35,19 @@ class CursosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        unset($data["_token"]);
+        $curso = new \App\Curso;
+        $curso->fill([
+            'sNombre' => $data['sNombre'],
+            'iCupo' => $data['iCupo'],
+            'dPrecio' => $data['dPrecio'],
+            'sDescripcion' => $data['sDescripcion'],
+            'fFecha' => $data['fFecha']
+        ]);
+        $curso->save();
+        $cursos = \App\Curso::get();
+        return view('cursos')->with('cursos', $cursos);
     }
 
     /**
@@ -46,7 +58,9 @@ class CursosController extends Controller
      */
     public function show($id)
     {
-        return view('detallecurso');//->with('cursos', $cursos);
+        $curso = \App\Curso::find($id);
+        $inscripciones = \App\Inscripcion::where('idCurso',$curso->id)->get();
+        return view('detallecurso')->with('curso', $curso)->with('inscripciones',$inscripciones);
     }
 
     /**
@@ -69,7 +83,19 @@ class CursosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        unset($data["_token"]);
+        $curso = \App\Curso::find($id);
+        $curso->fill([
+            'sNombre' => $data['sNombre'],
+            'iCupo' => $data['iCupo'],
+            'dPrecio' => $data['dPrecio'],
+            'sDescripcion' => $data['sDescripcion'],
+            'fFecha' => $data['fFecha']
+        ]);
+        $curso->save();
+        $cursos = \App\Curso::get();
+        return view('cursos')->with('cursos', $cursos);
     }
 
     /**
