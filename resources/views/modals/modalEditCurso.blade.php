@@ -7,11 +7,6 @@
                 <div class="modal-body">
                     <div class="row top5" style="margin-bottom: 20px;">
                         <div class="col-md-12 text-left">
-                            ¿Eres Administrador? <input type="radio" name="bolAdmin">
-                        </div>
-                    </div>
-                    <div class="row top5" style="margin-bottom: 20px;">
-                        <div class="col-md-12 text-left">
                             <input class="form-control" type="text" placeholder="Nombre" id="example-text-input" name="nombreCurso">
                         </div>
                     </div>

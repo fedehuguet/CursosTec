@@ -7,11 +7,6 @@
                 <div class="modal-body">
                     <div class="row top5" style="margin-bottom: 20px;">
                         <div class="col-md-12 text-left">
-                            ¿Eres Administrador? <input type="radio" name="bolAdmin">
-                        </div>
-                    </div>
-                    <div class="row top5" style="margin-bottom: 20px;">
-                        <div class="col-md-12 text-left">
                             <input class="form-control col-md-10" type="text" placeholder="Nombre" id="example-text-input" name="nombreCurso">
                         </div>
                     </div>
@@ -32,7 +27,7 @@
                     </div>
                     <div class="row top5" style="margin-bottom: 20px;">
                         <div class="col-md-12 text-left">
-                            <input class="form-control" type="text" placeholder="Fecha Ejemplo: 10/22/17" id="example-text-input" name="sFecha">
+                            <input class="form-control" type="text" placeholder="Fecha Ejemplo: 22/11/17" id="example-text-input" name="sFecha">
                         </div>
                     </div>
                 </div>

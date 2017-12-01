@@ -16,10 +16,6 @@ $("[id=modalAddCur]").ready(function () {
                 var dPrec = parseFloat($(this).closest('.modal').find('[name=dPrecio]').val());
                 var sDesc = $(this).closest('.modal').find('[name=sDescripcion]').val();
                 var sFec = $(this).closest('.modal').find('[name=sFecha]').val();
-                if($('[name=bolAdmin]').is(':checked') != 1) {
-                    alert('Por favor indique que si es administrador');
-                    return;
-                }
                 if(sNom == "" || iCup == "" || sDesc == "" || sFec == "") {
                     alert('Error llene los campos');
                     return;
@@ -71,10 +67,6 @@ $("[id=modalEditCur]").ready(function () {
                 var sDesc = $(this).closest('.modal').find('[name=sDescripcion]').val();
                 var sFec = $(this).closest('.modal').find('[name=sFecha]').val();
                 var idCur = $(this).closest('.modal').find('[name=Cursoid]').val();
-                if($('[name=bolAdmin]').is(':checked') != 1) {
-                    alert('Por favor indique que si es administrador');
-                    return;
-                }
                 if(sNom == "" || iCup == "" || sDesc == "" || sFec == "") {
                     alert('Error llene los campos');
                     return;
@@ -106,6 +98,11 @@ $("[id=modalInscribir]").ready(function () {
     $('#btnInscribir').click(function() {
         debugger;
         var idCur = $(this).attr('idcurso');
+        var cupo = $(this).attr('cupo');
+        if(cupo <= 0 ){
+            alert('El curso ya esta lleno');
+            return;
+        }
         var modal = $("[id=modalInscribir] > .modal").clone();
         console.log(modal.length);
         $(modal).modal('show');

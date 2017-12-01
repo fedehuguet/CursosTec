@@ -12,7 +12,7 @@
 		@if(Auth::check())
 		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnEditCurso" data-info="{{$curso}}">Editar el curso</button>
 		@else
-		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnInscribir" idCurso="{{$curso->id}}">Inscribirme al curso</button>
+		<button style="margin-top: 20px;" class="btn btn-primary col-md-12" id="btnInscribir" idCurso="{{$curso->id}}" cupo="{{$curso->iCupo}}">Inscribirme al curso</button>
 		@endif
 	</div>
 	<div class="col-md-8" style="margin-top: 50px;">

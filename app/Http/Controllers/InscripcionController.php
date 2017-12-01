@@ -44,6 +44,8 @@ class InscripcionController extends Controller
         $cliente->save();
         $inscripcion = new \App\Inscripcion;
         $curso = \App\Curso::find($data['idCurso']);
+        $curso->iCupo = $curso->iCupo - 1;
+        $curso->save();
         $inscripcion->fill([
             'idCurso' => $curso->id,
             'idCliente' => $cliente->id,

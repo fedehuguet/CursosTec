@@ -17,7 +17,7 @@
                     </div>
                     <div class="row top5" style="margin-bottom: 20px;">
                         <div class="col-md-12 text-left">
-                            <input class="form-control" type="text" placeholder="Password" id="example-text-input" name="passUsuario">
+                            <input class="form-control" type="password" placeholder="Password" id="example-text-input" name="passUsuario">
                         </div>
                     </div>
 

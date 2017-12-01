@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cursos = \App\Curso::get();
+        $cursos = \App\Curso::take(3)->get();
         return view('welcome')->with('cursos',$cursos);
     }
 

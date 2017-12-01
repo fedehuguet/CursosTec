@@ -20,7 +20,7 @@
       <div class="col-md-8">
         <ul class="nav navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">Cursos Tec <i class="large material-icons">computer</i></a>
+            <a class="nav-link" href="/">Cursos Tec</a>
           </li>
         </ul>
       </div>
