@@ -36,8 +36,7 @@ $("[id=modalAddCur]").ready(function () {
                 $.ajax({
                   type: 'POST',
                   url: urlResource,
-                  data: dataSend,
-                  dataType: 'json'
+                  data: dataSend
                 }).done(function(response){
                     $(modal).modal('hide');
                     location.reload();
@@ -92,9 +91,8 @@ $("[id=modalEditCur]").ready(function () {
                 $.ajax({
                   type: 'PATCH',
                   url: urlResource,
-                  data: dataSend,
-                  dataType: 'json'
-                }).done(function(response){
+                  data: dataSend
+                }).done(function(){
                     $(modal).modal('hide');
                     location.reload();
                 });
@@ -133,9 +131,9 @@ $("[id=modalInscribir]").ready(function () {
                 $.ajax({
                   type: 'POST',
                   url: urlResource,
-                  data: dataSend,
-                  dataType: 'json'
+                  data: dataSend
                 }).done(function(response){
+                    $(modal).modal('hide');
                     location.reload();
                 });
             });

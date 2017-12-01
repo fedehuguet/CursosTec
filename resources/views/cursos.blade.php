@@ -7,16 +7,17 @@
       </div>
       <div class="row">
         @foreach($cursos as $curso)
-        <a href="/cursos/{{$curso->id}}">
-        	<div class="col-md-6 col-lg-4">
-          		<div class="card">
-            		<div class="card-block">
-              			<h4 class="card-title">{{$curso->sNombre}}</h4>
-              			<p class="card-text">{{$curso->sDescripcion}}</p>
-            		</div>
+      	<div class="col-md-6 col-lg-4">
+        		<div class="card">
+          		<div class="card-block">
+                  <a href="/cursos/{{$curso->id}}">
+            			   <h4 class="card-title">{{$curso->sNombre}}</h4>
+                  </a>
+            			<p class="card-text">{{$curso->sDescripcion}}</p>
           		</div>
-        	</div>
-        </a>
+        		</div>
+      	</div>
+        
         @endforeach
       </div>
 </div>
